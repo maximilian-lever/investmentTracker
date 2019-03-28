@@ -1,17 +1,82 @@
 <html>
-    <head></head>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <style>
+            body {
+                background-color:rgb(100, 100, 100);
+            }
+            .form-control {
+                height: 10%;
+            }
+            .btn {
+                height: 10%;
+            }
+            table {
+                border-collapse: collapse;
+                background-color: rgb(0, 47, 180);
+                color: rgb(158, 200, 255);
+                font-family: arial, sans-serif;
+                font-size: 150%;
+            }
+            th {
+                font-weight: bold;
+            }
+            td, th {
+                border: 2px solid rgb(0, 122, 255)
+            }
+            tr:nth-child(even){
+                background-color:rgb(0, 22, 155);
+            }
+            th:nth-child(1) {
+                width: 33%;
+            }
+            th:nth-child(2) {
+                width: 48%;
+            }
+        </style>
+    </head>
     <body>
-        <table id="investmentTable">
-            <form>
-                <input type="text" id="investment" placeholder="Investment">
-                <input type="text" id="dailyReturn" placeholder="Daily Return">
-            </form>
-            <button>Submit</button>
+        <table id="table" align="right">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Investment and Return</span>
+                </div>
+                <input type="text" aria-label="investment" id="input1" class="form-control" placeholder="Investment">
+                <input type="text" aria-label="dailyReturn" id="input2" class="form-control" placeholder="Daily Return">
+                <button type="button" id="submit" class="btn btn-primary btn-lg active">Submit</button>
+                <button type="button" id="clear" class="btn btn-secondary btn-lg active">Clear Table</button>
+            </div>
+            
             <tr>
-                <td>Date</td>
-                <td>Funds</td>
-                <td>Percentage UP/DOWN</td>
+                <th scope="col">Date</th>
+                <th scope="col">Funds</th>
+                <th scope="col">UP/DOWN</th>
             </tr>
         </table>
+        <script src="./JS/localStorageTable.js"></script>
+        <script>
+            function percentage(){
+
+            }
+            var stake = 100,
+                Return = 200,
+                onePercent,
+                lossGain;
+
+            onePercent = (stake / 100);
+            lossGain = (Return - stake) / onePercent;
+            // addRow(0);
+            if (started){
+                multidimentionalArray(index);
+                pushEntry(index);
+                saveData();
+                addRow(index);
+                index++;
+            }else {
+                retrieveData();
+                started = true;
+            }
+        </script>
     </body>
 </html>
